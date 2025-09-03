@@ -20,6 +20,7 @@ const geometry = new THREE.SphereGeometry(100);
 const material = new THREE.MeshBasicMaterial({
 //   color: new THREE.Color("orange"),
   map: texture,
+  aoMap: texture,
 });
 
 const mesh = new THREE.Mesh(geometry, material);
