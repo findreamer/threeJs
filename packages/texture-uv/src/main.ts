@@ -2,9 +2,17 @@ import "./style.css";
 import * as THREE from "three";
 // @ts-ignore
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import mesh from "./mesh";
+import mesh2 from "./mesh2";
+import cylinder from "./mesh3";
 
 // 场景
 const scene = new THREE.Scene();
+
+// 增加mesh
+scene.add(mesh);
+scene.add(mesh2);
+scene.add(cylinder);
 
 // 坐标轴
 const axesHelper = new THREE.AxesHelper(200);
@@ -15,13 +23,22 @@ const height = window.innerHeight;
 
 // 相机
 const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-camera.position.set(0, 0, 100);
+camera.position.set(0, 0, 200);
 scene.add(camera);
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(width, height);
 
 function render() {
+  if (mesh2.material.map) {
+    mesh2.material.map.offset.y += 0.002;
+    mesh2.material.map.offset.x += 0.001;
+  }
+  if (cylinder.material.map) {
+    cylinder.material.map.offset.y += 0.002;
+    cylinder.material.map.offset.x += 0.001;
+  }
+
   renderer.render(scene, camera);
   requestAnimationFrame(render);
 }
