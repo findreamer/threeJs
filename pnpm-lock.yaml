@@ -49,6 +49,15 @@ importers:
         specifier: ^2.1.8
         version: 2.2.12(typescript@5.6.3)
 
+  packages/generate-geometry:
+    devDependencies:
+      typescript:
+        specifier: ~5.6.2
+        version: 5.6.3
+      vite:
+        specifier: ^5.4.10
+        version: 5.4.19
+
   packages/material-color-texture:
     dependencies:
       vue:
