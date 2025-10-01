@@ -58,6 +58,15 @@ importers:
         specifier: ^5.4.10
         version: 5.4.19
 
+  packages/gradient-color-bar-chart:
+    devDependencies:
+      typescript:
+        specifier: ~5.8.3
+        version: 5.8.3
+      vite:
+        specifier: ^7.1.7
+        version: 7.1.7
+
   packages/house:
     devDependencies:
       typescript:
