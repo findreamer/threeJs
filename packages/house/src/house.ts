@@ -5,6 +5,7 @@ import behindWall from "./behind-wall";
 import frontWall from "./front-wall";
 import roof from "./roof";
 import doorstep from "./doorstep";
+import grass from "./grass";
 
 const house = new THREE.Group();
 house.add(foundation);
@@ -14,5 +15,6 @@ house.add(behindWall);
 house.add(frontWall);
 house.add(roof);
 house.add(doorstep);
+house.add(grass);
 
 export default house;

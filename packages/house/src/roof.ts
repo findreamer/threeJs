@@ -1,9 +1,19 @@
 import * as THREE from "three";
 import { GUI } from "three/examples/jsm/libs/lil-gui.module.min.js";
 
+const loader = new THREE.TextureLoader();
+const texture = loader.load("roof.jpg");
+texture.colorSpace = THREE.SRGBColorSpace;
+// 设置纹理在 U 轴（水平方向）上的重复模式为重复包裹
+texture.wrapS = THREE.RepeatWrapping;
+texture.repeat.x = 4;
+
 const geometry = new THREE.BoxGeometry(4200, 2000, 100);
 const material = new THREE.MeshLambertMaterial({
-  color: new THREE.Color("red"),
+  // color: new THREE.Color("red"),
+  map: texture,
+  // 开启环境光遮蔽
+  aoMap: texture,
 });
 
 const roof = new THREE.Mesh(geometry, material);
@@ -14,7 +24,7 @@ const obj = {
 };
 
 // Gui 页面调试工具，控制 Roof 旋转角度和宽度
-const gui = new GUI();
+export const gui = new GUI();
 gui.add(roof.position, "y").min(-10000).max(10000).step(100);
 gui.add(roof.position, "z").min(-10000).max(10000).step(100);
 gui.addColor(roof.material, "color");
