@@ -21,6 +21,15 @@ importers:
         specifier: ^7.1.3
         version: 7.1.3
 
+  packages/box3-api:
+    devDependencies:
+      typescript:
+        specifier: ~5.8.3
+        version: 5.8.3
+      vite:
+        specifier: ^7.1.7
+        version: 7.1.7
+
   packages/box3-test:
     devDependencies:
       typescript:
