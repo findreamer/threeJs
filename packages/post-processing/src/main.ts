@@ -33,7 +33,7 @@ camera.lookAt(0, 0, 0);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(width, height);
 
-// 渲染 composer
+// 效果合成器
 const composer = new EffectComposer(renderer);
 // 渲染 pass
 const renderPass = new RenderPass(scene, camera);
